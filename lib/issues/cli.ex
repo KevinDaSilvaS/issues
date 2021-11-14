@@ -64,6 +64,7 @@ defmodule Issues.CLI do
     end)
   end
 
+  def get_char_amount_format([]), do: 1
   def get_char_amount_format(issues) do
     List.last(issues)["number"]
     |> to_string()
