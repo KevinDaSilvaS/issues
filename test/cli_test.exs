@@ -1,7 +1,11 @@
 defmodule CLITest do
   use ExUnit.Case
   doctest Issues
-  import Issues.CLI, only: [ parse_args: 1, sort_into_descending_order: 1 ]
+  import Issues.CLI, only: [
+    parse_args: 1,
+    sort_into_descending_order: 1 ,
+    get_char_amount_format: 1
+  ]
 
   test ":help returned by option parse with -h and --help options" do
     assert parse_args(["-h", "anything"]) == :help
@@ -25,5 +29,13 @@ defmodule CLITest do
 
   defp fake_created_at_list(values) do
     for value <- values, do: %{"created_at" => value, "other_data" => :data}
+  end
+
+  test "char amount should be an integer with non empty list" do
+    assert get_char_amount_format([%{"number" => "123"}]) == 3
+  end
+
+  test "char amount should be an integer with an empty list" do
+    assert get_char_amount_format([]) == 1
   end
 end
