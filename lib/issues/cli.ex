@@ -2,7 +2,7 @@ defmodule Issues.CLI do
   import Issues.GithubIssues, only: [fetch: 2]
   @default_count 4
 
-  def run(argv) do
+  def main(argv) do
     parse_args argv
   end
 
