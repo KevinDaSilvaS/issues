@@ -1,6 +1,6 @@
 # Issues
 
-**TODO: Add description**
+**Elixir CLI that fetches issues for a given username and repository using the GitHub API**
 
 ## Installation
 
