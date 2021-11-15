@@ -11,4 +11,6 @@ If Elixir(with mix) and Erlang are installed:
 mix escript.build
 ```
 - CLI options
-``` ./issues "github_username" "repository_name" 10(optional field, dislays only the last n issues) ```
+``` 
+./issues "github_username" "repository_name" 10(optional field, dislays only the last n issues) 
+```
